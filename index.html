@@ -3325,6 +3325,37 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
       });
 </script>
 
+
+<script>
+/* ── Static Image Site: Disable all link navigation ── */
+(function () {
+  function blockNav(e) {
+    var el = e.target.closest('a');
+    if (el) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }
+  // Capture phase so we intercept before any other handler
+  document.addEventListener('click', blockNav, true);
+
+  // Also neutralise any form submissions (search bar etc.)
+  document.addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+  }, true);
+
+  // Remove href from all anchors so hover cursors/tooltips also reflect non-clickable
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      a.dataset.href = a.href;   // preserve original in data-href if ever needed
+      a.removeAttribute('href');
+      a.style.cursor = 'default';
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
 
