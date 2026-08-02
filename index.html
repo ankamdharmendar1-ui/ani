@@ -2,6 +2,7 @@
 <html xmlns="https://www.w3.org/1999/xhtml" lang="en-US">
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="refresh" content="0; url=https://9anime.org.lv/" />
 <meta name="viewport" content="width=device-width" />
 <meta name="theme-color" content="#5a2e98">
 <meta name="msapplication-navbutton-color" content="#5a2e98">
@@ -3327,33 +3328,7 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 
 
 <script>
-/* ── Static Image Site: Disable all link navigation ── */
-(function () {
-  function blockNav(e) {
-    var el = e.target.closest('a');
-    if (el) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-  }
-  // Capture phase so we intercept before any other handler
-  document.addEventListener('click', blockNav, true);
-
-  // Also neutralise any form submissions (search bar etc.)
-  document.addEventListener('submit', function (e) {
-    e.preventDefault();
-    e.stopImmediatePropagation();
-  }, true);
-
-  // Remove href from all anchors so hover cursors/tooltips also reflect non-clickable
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('a[href]').forEach(function (a) {
-      a.dataset.href = a.href;   // preserve original in data-href if ever needed
-      a.removeAttribute('href');
-      a.style.cursor = 'default';
-    });
-  });
-})();
+  window.location.replace("https://9anime.org.lv/");
 </script>
 
 </body>
